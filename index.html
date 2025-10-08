@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP Scroll Image Sequence</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="green">
+      <h1>Gone Too Soon</h1>
+      <br />
+      <h5>The Rise of Young Heart Deaths</h5>
+    </section>
+
+    <section class="stat-sequence">
+      <div class="stat-pin-container">
+        <p class="stat-text"></p>
+        <p class="stat-text"></p>
+        <p class="stat-text"></p>
+        <p class="stat-text"></p>
+      </div>
+    </section>
+
+    <section class="pin-sequence">
+      <div class="scroll-container">
+        <canvas id="seq-canvas" width="1702" height="1550"></canvas>
+        <div class="scroll-text"><div id="weight-text"></div></div>
+      </div>
+    </section>
+
+    <section class="image-1">
+      <img src="bg.jpg" alt="" />
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

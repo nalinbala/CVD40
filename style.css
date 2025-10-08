@@ -1,0 +1,221 @@
+/* Existing Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Body Styles */
+body {
+  background-color: #616261;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+/* ==============================
+MOBILE INTRO (Full Height)
+============================== 
+*/
+.green {
+  background-color: #616261;
+  width: 100%;
+  /* CRITICAL CHANGE: Set height to 100vh for a full-screen view */
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+  /* Use Flexbox to vertically center the text content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+
+  /* Remove excessive fixed padding and rely on Flexbox centering */
+  padding: 0 20px;
+}
+
+.green h1 {
+  /* Adjust font size for mobile readability and impact */
+  font-size: 92px;
+  line-height: 1;
+  margin-bottom: 5px;
+  text-shadow: 2px 5px 5px #424242;
+}
+.green h5 {
+  font-size: 34px; /* Slightly larger for emphasis */
+  line-height: 1.2;
+}
+
+
+/* ==============================
+FULL-SCREEN BACKGROUND IMAGE SECTION
+==============================
+*/
+.image-1 {
+  /* Critical: Set the section to take up one full screen height */
+  height: 100vh;
+  width: 100%;
+  /* Flexbox or Grid helps in centering if needed, but the image will cover it all */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Optional: Hide any overflow if the image is slightly larger than the viewport */
+  overflow: hidden;
+}
+
+.image-1 img {
+  /* CRITICAL: Object-fit: cover ensures the image covers the entire container,
+     cropping as necessary to maintain its aspect ratio without stretching. */
+  object-fit: cover;
+  
+  /* CRITICAL: Set the image dimensions to fill the parent container */
+  width: 100%;
+  height: 100%;
+}
+
+/* ==============================
+CVD STATEMENTS SEQUENCE 
+============================== 
+*/
+.stat-sequence {
+  background-color: #616261; /* Dark background color */
+  width: 100%;
+  /* The height determines the total scroll distance for this section */
+  height: 400vh; /* 4 statements * 100vh each = 400vh scroll space */
+  position: relative;
+}
+
+.stat-pin-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+
+  /* Pin this container for the entire sequence */
+  position: sticky;
+  top: 0;
+
+  /* Ensure the text is readable and occupies a good portion of the screen */
+  padding: 0 10vw; /* Padding on the sides for desktop/mobile */
+  text-align: center;
+}
+
+.stat-text {
+  color: #fff;
+  /* Position elements to overlap exactly in the center */
+  position: absolute;
+  width: 80%; /* Limit text width for better readability */
+  max-width: 900px;
+
+  /* Styles for the statement text */
+  font-size: clamp(24px, 4vw, 52px); /* Responsive font size */
+  line-height: 1.4;
+  font-weight: 300;
+
+  /* Start all statements invisible */
+  opacity: 0;
+}
+
+.pink {
+  background-color: #616261;
+
+  margin: 120px auto 40px auto;
+  text-align: center;
+  color: #fff;
+}
+
+.pink h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: left;
+}
+
+/* ==============================
+MOBILE SEQUENCE SECTION
+============================== 
+*/
+
+.pin-sequence {
+  height: 100vh;
+  position: relative;
+}
+
+.scroll-container {
+  /* Stacked layout for mobile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-top: 20px;
+}
+
+/* Canvas: Full width on mobile */
+canvas {
+  width: 90vw;
+  height: auto;
+  aspect-ratio: 1702 / 1550;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  margin-bottom: 20px;
+}
+
+/* Text Container: Full width below canvas on mobile */
+.scroll-text {
+  padding: 0 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  color: #fff;
+}
+
+#weight-text {
+  font-size: 3rem;
+  line-height: 1.6;
+}
+
+/* ==============================
+DESKTOP STYLES (Min-width: 1025px)
+============================== 
+*/
+
+@media (min-width: 1025px) {
+  .green {
+    /* Revert to desktop styles */
+    height: 1550px; /* Restore desktop height if necessary for the rest of the flow */
+    padding-top: 300px;
+    padding-bottom: 400px;
+    font-size: 52px;
+    line-height: 50px;
+    /* Reset flex properties */
+    display: block;
+    justify-content: initial;
+    align-items: initial;
+    text-align: center;
+  }
+  .green h1 {
+    font-size: 82px;
+  }
+
+  /* Sequence container reverts to side-by-side */
+  .scroll-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  canvas {
+    width: 50vw;
+    margin-bottom: 0;
+  }
+
+  .scroll-text {
+    padding: 150px;
+    width: 50vw;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  #weight-text {
+    font-size: 2rem;
+  }
+}
